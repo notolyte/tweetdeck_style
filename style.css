@@ -1,0 +1,135 @@
+/* 読み込み中のときの背景色を淡色にする */
+body {
+    background-color: #8B8B8B;
+}
+.spinner-centered{
+    filter: grayscale(100%);
+}
+/* 二つのアカウントの通知欄を半分の高さにして一列で表示する */
+section:nth-of-type(3){
+        /* notification account 1 */
+    position: absolute;
+    top: 0;
+}
+section:nth-of-type(3), section:nth-of-type(4) {
+    height: 50%;
+}
+/* 通知欄でアイコンを表示しない */
+section:nth-of-type(3) .size24, section:nth-of-type(4) .size24 {
+    display: none;
+}
+/* ふぁぼ通知の色を淡色にする */
+section:nth-of-type(3) .icon-favorite-color, section:nth-of-type(4) .icon-favorite-color {
+    color: #666;
+}
+/* 通知欄でツイート本文を一行しか表示しない */
+section:nth-of-type(3) p, section:nth-of-type(4) p:not(.tweet-detail){
+    height: 1.2rem;
+}
+article div div.tweet-detail p {
+    height: inherit;
+}
+/* 通知欄でツイート主を表示しない */
+section:nth-of-type(3) .js-tweet header, section:nth-of-type(4) .js-tweet header {
+    display: none;
+}
+article div div.tweet-detail header {
+    display: block;
+}
+/* 通知欄でメディアを表示しない */
+section:nth-of-type(3) .media-badge, section:nth-of-type(4) .media-badge {
+    display: none;
+}
+/* 通知欄でふぁぼりつや返信の数を表示しない */
+section:nth-of-type(3) .js-tweet footer, section:nth-of-type(4) .js-tweet footer {
+    display: none;
+}
+article div div.tweet-detail footer {
+    display: block;
+}
+/* 通知欄でshow this threadを表示しない */
+section:nth-of-type(3) .js-show-this-thread, section:nth-of-type(4) .js-show-this-thread {
+    display: none;
+}
+
+/* columnの幅をwideに設定したとき，それをより広くする*/
+.is-wide-columns .column{
+    width: 400px;
+}
+
+/* スクロールバーを表示しない */
+.js-column-scroller{
+    scrollbar-width: none;
+}
+#container{
+    scrollbar-width: none;
+}
+
+/* ツイート作成画面の背景色を淡色にする */
+.compose, .old-composer-footer{
+    background-color: #ccc;
+    color: #36393c;
+}
+.compose-text-title, .compose-account, .compose-account:hover, .compose-remember-state, button, button:hover{
+    color: #36393c;
+}
+.icon-check::before{
+    color: white;
+}
+.btn-on-blue, button.Button--primary{
+    background-color: #666;
+}
+.btn-on-blue:hover, button.Button--primary:hover:hover{
+    background-color: #444;
+}
+button.Button--primary:hover{
+    border-color:#444;
+}
+div[data-testid="filterMessage"]{
+    display: none;
+}
+.compose-account-selected{
+    background-color: #2b7bb9;
+}
+.compose-account-img{
+    background-color: transparent;
+}
+
+
+/* メディアの詳細画面でメディアをより大きく表示する */
+.mdl.s-full {
+    max-width: 100%;
+}
+.med-embeditem {
+    top: 0;
+    bottom: 0;
+}
+.med-tweet {
+    top: 0;
+    left: 0;
+    width: 300px;
+    background-color: rgba(0,0,0,60%)
+}
+.med-tweet:hover {
+    /* メディアの詳細画面でツイートをホバーしたとき非表示にする */
+    opacity: 0;
+}
+
+/* UIのフォント */
+body{
+    font-family: 'Ubuntu', 'Trebuchet MS', 'Noto Sans CJK JP', sans-serif;
+}
+/* ツイート本文の基本フォント */
+.tweet-text {
+    font-family: 'Segoe UI', sans-serif;
+}
+/* 言語ごとに特別なフォントを適用 */
+p[lang="en"], p[lang="fr"], p[lang="de"], p[lang="eu"], p[lang="it"], p[lang="fr"], p[lang="pt"], p[lang="es"]{
+    font-family: 'Ubuntu', sans-serif;
+}
+p[lang="zh"]{
+    font-family: 'Noto Sans SC', sans-serif;
+}
+p[lang="ko"]{
+    font-family: 'Noto Sans CJK JP', sans-serif;
+}

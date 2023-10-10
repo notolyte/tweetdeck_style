@@ -8,11 +8,11 @@ body {
 /* 二つのアカウントの通知欄を半分の高さにして一列で表示する */
 section:nth-of-type(3){
         /* notification account 1 */
-    position: absolute;
+    position: absolute !important;
     top: 0;
 }
 section:nth-of-type(3), section:nth-of-type(4) {
-    height: 50%;
+    height: 50% !important;
 }
 /* 通知欄でアイコンを表示しない */
 section:nth-of-type(3) .size24, section:nth-of-type(4) .size24 {
@@ -23,10 +23,10 @@ section:nth-of-type(3) .icon-favorite-color, section:nth-of-type(4) .icon-favori
     color: #666;
 }
 /* 通知欄でツイート本文を一行しか表示しない */
-section:nth-of-type(3) p, section:nth-of-type(4) p:not(.tweet-detail){
+section:nth-of-type(3) .js-show-detail p, section:nth-of-type(4) .js-show-detail p{
     height: 1.2rem;
 }
-article div div.tweet-detail p {
+article div div.js-tweet-content p {
     height: inherit;
 }
 /* 通知欄でツイート主を表示しない */
@@ -37,11 +37,11 @@ article div div.tweet-detail header {
     display: block;
 }
 /* 通知欄でメディアを表示しない */
-section:nth-of-type(3) .media-badge, section:nth-of-type(4) .media-badge {
+section:nth-of-type(3) .js-show-detail .media-badge, section:nth-of-type(4) .js-show-detail .media-badge {
     display: none;
 }
 /* 通知欄でふぁぼりつや返信の数を表示しない */
-section:nth-of-type(3) .js-tweet footer, section:nth-of-type(4) .js-tweet footer {
+section:nth-of-type(3) .js-show-detail footer, section:nth-of-type(4) .js-show-detail footer {
     display: none;
 }
 article div div.tweet-detail footer {
@@ -96,7 +96,7 @@ div[data-testid="filterMessage"]{
 }
 
 
-/* メディアの詳細画面でメディアをより大きく表示する */
+/* メディアの詳細画面でメディアをより大きく表示する
 .mdl.s-full {
     max-width: 100%;
 }
@@ -111,25 +111,19 @@ div[data-testid="filterMessage"]{
     background-color: rgba(0,0,0,60%)
 }
 .med-tweet:hover {
-    /* メディアの詳細画面でツイートをホバーしたとき非表示にする */
+    /* メディアの詳細画面でツイートをホバーしたとき非表示にする 
     opacity: 0;
 }
+*/
 
 /* UIのフォント */
 body{
-    font-family: 'Ubuntu', 'Trebuchet MS', 'Noto Sans CJK JP', sans-serif;
+    font-family: 'Noto Sans', 'Noto Sans JP',  sans-serif;
 }
 /* ツイート本文の基本フォント */
-.tweet-text {
-    font-family: 'Segoe UI', sans-serif;
-}
-/* 言語ごとに特別なフォントを適用 */
-p[lang="en"], p[lang="fr"], p[lang="de"], p[lang="eu"], p[lang="it"], p[lang="fr"], p[lang="pt"], p[lang="es"]{
-    font-family: 'Ubuntu', sans-serif;
+.tweet-text, .compose-text {
+    font-family: 'Noto Sans', 'Noto Sans JP', 'Noto Sans KR', sans-serif;
 }
 p[lang="zh"]{
     font-family: 'Noto Sans SC', sans-serif;
-}
-p[lang="ko"]{
-    font-family: 'Noto Sans CJK JP', sans-serif;
 }
